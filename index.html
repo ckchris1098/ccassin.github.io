@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christopher Cassin | Cloud & AI Strategy</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.8rem;
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* SECTION */
+.section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* FILTER BUTTONS */
+.filters {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  margin: 8px;
+  border-radius: 30px;
+  border: 2px solid #34495e;
+  background: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #34495e;
+  color: white;
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* TAGS */
+.tag {
+  display: inline-block;
+  background: #e5e7eb;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin: 5px 5px 0 0;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 50px 20px;
+  color: #6b7280;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <h1>Christopher Cassin</h1>
+  <p>AWS Sr. Customer Solutions Manager | FSI Capital Markets | Cloud & GenAI Transformation</p>
+</div>
+
+<div class="section">
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterSelection('all')">All</button>
+    <button class="filter-btn" onclick="filterSelection('cloud')">Cloud</button>
+    <button class="filter-btn" onclick="filterSelection('ai')">AI & GenAI</button>
+    <button class="filter-btn" onclick="filterSelection('exec')">Executive Strategy</button>
+  </div>
+
+  <div class="grid">
+
+    <div class="card cloud">
+      <h3>Cloud Migration Acceleration</h3>
+      <p>Leading enterprise modernization initiatives across financial services institutions to reduce risk and accelerate adoption.</p>
+      <div class="tag">AWS</div>
+      <div class="tag">Migration</div>
+    </div>
+
+    <div class="card ai">
+      <h3>Agentic AI Strategy</h3>
+      <p>Designing multi-agent AI solutions for capital markets research, automation, and operational transformation.</p>
+      <div class="tag">GenAI</div>
+      <div class="tag">Capital Markets</div>
+    </div>
+
+    <div class="card exec">
+      <h3>Experience-Based Acceleration (EBA)</h3>
+      <p>Aligning executive stakeholders to measurable cloud transformation outcomes across premier AWS accounts.</p>
+      <div class="tag">Executive Engagement</div>
+      <div class="tag">Business Outcomes</div>
+    </div>
+
+    <div class="card cloud ai">
+      <h3>Amazon Connect Modernization</h3>
+      <p>Delivering AI-powered customer experience transformation leveraging Bedrock and modern cloud architecture.</p>
+      <div class="tag">AI Automation</div>
+      <div class="tag">CX</div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+© 2026 Christopher Cassin | Built on GitHub Pages
+</footer>
+
+<script>
+filterSelection("all")
+
+function filterSelection(category) {
+  let cards = document.getElementsByClassName("card");
+  let buttons = document.getElementsByClassName("filter-btn");
+
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove("active");
+  }
+
+  event.target.classList.add("active");
+
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].style.display = "none";
+    if (category === "all" || cards[i].classList.contains(category)) {
+      cards[i].style.display = "block";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
